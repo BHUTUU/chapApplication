@@ -1,0 +1,58 @@
+signin --completed
+login --completed
+username validation --completed
+username change --completed
+account delete --completed
+password change --completed
+name change --completed
+gender change --completed
+email change --completed
+loginByUser --completed
+logout --completed
+find user by username and email --completed
+WORKING ON:
+
+
+
+
+
+
+
+
+TODO:
+# 
+
+
+
+##client side:
+# need to do OTP verification for email (SMTP operation!) This may be done at the end of the client.
+ needed to collect more in this.
+# two step login and direct login class
+# have to modify the logged in table also (username) if any changes are made!
+
+totals_table
+1 | chat_ids | number of chat_ids
+2 | signed_in_users | number of signed_in_users
+
+Chat_id table
+chat_id | [list of usernames in this chat]
+
+
+If suman send message to Aman then server will check how many chats are already in our database
+if 0:
+    check if reciever is already in our database
+    if yes:
+        create a chat table with chat_id1 and add in totals_table and chat_id table.
+        add usernames of sender and reciever in chat_id table
+        append the following to the chat_id1 table
+        messageId, sentBy, repliedToMessageId, dateOfmessage, time of message, message.
+        return chatId
+    if no:
+        throw error saying reciever is not in our database
+if number of chats > 0:
+    if chat exists in our database
+        check if the sender is in the provided chat-id.
+        if yes:
+            append the chat_id{number} table
+    if not:
+        create new chat after checking last chat number.

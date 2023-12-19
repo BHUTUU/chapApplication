@@ -1,0 +1,20 @@
+{
+    "chatApplication": [
+        {
+            "program": "chatApplication",
+            "version": "0.0.1",
+            "edition": 2023,
+            "author": "Suman Kumat ~BHUTUU",
+            "company": "BHUTUU",
+            "github": "https://github.com/BHUTUU/chatApplication"
+        }
+    ],
+    "mysql": [
+        {
+            "host": "localhost",
+            "user": "root",
+            "password": "root",
+            "database_name": "chatapp"
+        }
+    ]
+}
