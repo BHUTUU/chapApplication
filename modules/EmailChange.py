@@ -1,13 +1,23 @@
 from modules.DatabaseManager import DatabaseManager
 from modules.Login import Login
-import re
+import re, requests
 
 class EmailChange:
     @staticmethod
     def validateEmail(email):
         regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
         if re.fullmatch(regex, email):
-            return True
+            try:
+                resp = requests.get("https://ssl-checker.io/api/v1/check/"+email.split('@')[1], timeout=4)
+                jsonResponse = resp.json()
+                status = jsonResponse["status"]
+                print(status)
+                if status == 'ok':
+                    return True
+                else:
+                    return False
+            except:
+                return False
         else:
             return False
     def __init__(self, databasecridentials,email, username, password):

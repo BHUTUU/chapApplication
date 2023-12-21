@@ -2,6 +2,7 @@ import json
 from hashlib import md5
 from modules.DatabaseManager import DatabaseManager
 from modules.UsernameManager import Username
+from modules.EmailChange import EmailChange
 class SigninManager:
     def __init__(self, databaseCridential,name, email, username, password, gender):
         self.name=name
@@ -27,6 +28,8 @@ class SigninManager:
     def doSignin(self):
         if not self.email:
             return [ False, "email is required!"]
+        if not EmailChange.validateEmail(self.email):
+            return [ False, "Invalid or temporary email address is not allowed!"]
         if not self.password:
             return [ False, "password is required!"]
         if not self.name:
