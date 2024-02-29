@@ -11,7 +11,7 @@ class EmailChange:
                 resp = requests.get("https://ssl-checker.io/api/v1/check/"+email.split('@')[1], timeout=4)
                 jsonResponse = resp.json()
                 status = jsonResponse["status"]
-                print(status)
+                # print(status)
                 if status == 'ok':
                     return True
                 else:
